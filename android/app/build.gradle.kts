@@ -34,6 +34,7 @@ sonar {
 android {
   namespace = "com.example.zprofile"
   compileSdk = flutter.compileSdkVersion
+
   // ndkVersion = flutter.ndkVersion
   ndkVersion = "26.1.10909125"
 
