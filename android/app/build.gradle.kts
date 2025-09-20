@@ -1,8 +1,34 @@
 plugins {
   id("com.android.application")
   id("kotlin-android")
+  id("org.sonarqube") version "6.3.1.5724"
   // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
   id("dev.flutter.flutter-gradle-plugin")
+}
+
+sonar {
+  properties {
+    property(
+        "sonar.projectKey",
+        "ZProfile_flutter-client",
+    )
+    property(
+        "sonar.organization",
+        "zprofile01",
+    )
+    property(
+        "sonar.verbose",
+        true,
+    )
+    property(
+        "sonar.flutter.source.version",
+        "3.8.1",
+    )
+    property(
+        "sonar.language",
+        "flutter",
+    )
+  }
 }
 
 android {
