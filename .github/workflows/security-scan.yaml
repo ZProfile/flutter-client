@@ -20,16 +20,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Save repo to artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: flutter-client
-          path: .
-          overwrite: true
-          if-no-files-found: error
-          retention-days: 1
-          include-hidden-files: true
-
   scanning:
     name: Scan for security checks
     runs-on: ubuntu-latest
