@@ -30,7 +30,3 @@ emulate: # Start emulator
 	  -memory 4096 \
 	  -no-snapshot-load \
 	  -no-snapshot-save &
-
-.PHONY: sonar
-sonar:
-	./gradlew build sonar --info
