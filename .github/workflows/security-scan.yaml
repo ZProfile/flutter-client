@@ -68,6 +68,7 @@ jobs:
 
       - name: Build
         run: |
+          chmod +x android/gradlew
           flutter build appbundle
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v5
