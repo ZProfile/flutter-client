@@ -36,8 +36,6 @@ jobs:
     if: ${{ github.actor != 'dependabot[bot]' }}
     strategy:
       fail-fast: false
-      matrix:
-        java_version: [21]
 
     steps:
       - name: Download repo artifact
@@ -45,12 +43,6 @@ jobs:
         with:
           name: android-client
           path: .
-
-      - name: Set up JDK ${{ matrix.java_version  }}
-        uses: actions/setup-java@v5
-        with:
-          java-version: ${{ matrix.java_version  }}
-          distribution: "zulu"
 
       - name: GitGuardian scan
         uses: GitGuardian/ggshield-action@v1.43.0
@@ -76,11 +68,11 @@ jobs:
           restore-keys: ${{ runner.os }}-gradle
 
       - name: Make gradlew executable
-        run: chmod +x ./gradlew
+        run: chmod +x ./android/gradlew
 
       - name: Build
         run: |
-          ./gradlew build sonar --info
+          ./android/gradlew build sonar --info
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v5
         env:
