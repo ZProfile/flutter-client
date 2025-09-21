@@ -88,7 +88,7 @@
               "mips-android-sysimage-license"
             ];
             android-studio = {
-              enable = true;
+              enable = false;
               package = pkgs.android-studio;
             };
           };
