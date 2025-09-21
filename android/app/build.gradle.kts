@@ -6,31 +6,6 @@ plugins {
   id("dev.flutter.flutter-gradle-plugin")
 }
 
-sonar {
-  properties {
-    property(
-        "sonar.projectKey",
-        "ZProfile_flutter-client",
-    )
-    property(
-        "sonar.organization",
-        "zprofile01",
-    )
-    property(
-        "sonar.verbose",
-        true,
-    )
-    property(
-        "sonar.flutter.source.version",
-        "3.8.1",
-    )
-    property(
-        "sonar.language",
-        "flutter",
-    )
-  }
-}
-
 android {
   namespace = "com.example.zprofile"
   compileSdk = flutter.compileSdkVersion
