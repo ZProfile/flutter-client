@@ -7,6 +7,7 @@ on:
 
 env:
   SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+  REPOSITORY: flutter-client
 
 jobs:
   checkout:
@@ -16,14 +17,14 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
       - name: Save repo to artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
-          name: flutter-client
+          name: "${{ env.REPOSITORY }}"
           path: .
           overwrite: true
           if-no-files-found: error
@@ -41,7 +42,7 @@ jobs:
       - name: Download repo artifact
         uses: actions/download-artifact@v5
         with:
-          name: flutter-client
+          name: "${{ env.REPOSITORY }}"
           path: .
 
       - name: GitGuardian scan
