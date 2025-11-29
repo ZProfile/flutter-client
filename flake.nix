@@ -1,5 +1,5 @@
 {
-  description = "Android client";
+  description = "Mobile application for ZProfile";
 
   inputs = {
     devenv-root = {
@@ -44,7 +44,7 @@
         };
 
         devenv.shells.default = {
-          name = "Android client";
+          name = "Mobile application for ZProfile";
 
           languages.kotlin.enable = true;
           secretspec.enable = true;
