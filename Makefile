@@ -6,7 +6,7 @@ EMULATOR_ID := emulator-5554
 all: run
 
 run: ## Run the app
-	flutter run -d emulator-5554 --hot
+	flutter run -d $(EMULATOR_ID) --hot
 
 .PHONY: help
 help:  ## help target to show available commands with information

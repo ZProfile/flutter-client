@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
 
+// final keycloakConfig = KeycloakConfig(
+//   bundleIdentifier: 'com.zprofile.client',
+//   clientId: 'flutter-cient',
+//   frontendUrl: '<frontend_url>',
+//   realm: 'zprofile',
+// );
+// final keycloakWrapper = KeycloakWrapper(config: keycloakConfig);
+
 void main() {
+  // WidgetsFlutterBinding.ensureInitialized();
+  // keycloackWrapper.initialize();
+
   runApp(const MyApp());
 }
 
