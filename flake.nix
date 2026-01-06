@@ -45,8 +45,6 @@
 
         devenv.shells.default = {
           name = "Mobile application for ZProfile";
-
-          languages.kotlin.enable = true;
           secretspec.enable = true;
 
           # NOTE: First do devenv shell

@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/diagnostics.dart';
 import 'package:keycloak_wrapper/keycloak_wrapper.dart';
@@ -51,7 +52,9 @@ class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
   Future<void> login() async {
+    log("login has started");
     final isLoggedIn = await keycloakWrapper.login();
+    log("Log in completed!");
 
     if (isLoggedIn) debugPrint('User has successfully logged in!');
   }
