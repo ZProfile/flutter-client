@@ -11,7 +11,7 @@ android {
   compileSdk = flutter.compileSdkVersion
 
   // ndkVersion = flutter.ndkVersion
-  ndkVersion = "26.1.10909125"
+  ndkVersion = "28.2.13676358"
 
   compileOptions {
     sourceCompatibility = JavaVersion.VERSION_11
@@ -33,7 +33,7 @@ android {
     minSdk = 24
     targetSdk = 36
     buildToolsVersion = "36.0.0"
-    manifestPlaceholders["appAuthRedirectScheme"] = "zprofile"
+    manifestPlaceholders["appAuthRedirectScheme"] = "com.zprofile.client"
   }
 
   buildTypes {

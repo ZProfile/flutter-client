@@ -45,8 +45,6 @@
 
         devenv.shells.default = {
           name = "Mobile application for ZProfile";
-
-          languages.kotlin.enable = true;
           secretspec.enable = true;
 
           # NOTE: First do devenv shell
@@ -60,21 +58,24 @@
           android = {
             enable = true;
             flutter.enable = true;
-            platforms.version = ["36" "35"];
+            platforms.version = ["36" "35" "34" "33"];
             systemImageTypes = ["google_apis_playstore"];
             abis = ["arm64-v8a" "x86_64"];
             cmake.version = ["4.0.2"];
             cmdLineTools.version = "19.0";
             tools.version = "26.1.1";
             platformTools.version = "36.0.0";
-            buildTools.version = ["36.0.0"];
+            buildTools.version = ["36.0.0" "34.0.0" "33.0.0"];
             emulator = {
               enable = true;
               version = "36.1.2";
             };
             sources.enable = true;
             systemImages.enable = true;
-            ndk.enable = true;
+            ndk = {
+              enable = true;
+              version = ["28.2.13676358"];
+            };
             googleAPIs.enable = true;
             googleTVAddOns.enable = true;
             extras = ["extras;google;gcm"];
@@ -87,10 +88,6 @@
               "intel-android-sysimage-license"
               "mips-android-sysimage-license"
             ];
-            android-studio = {
-              enable = false;
-              package = pkgs.android-studio;
-            };
           };
 
           devenv.root = let
@@ -101,11 +98,6 @@
           packages = with pkgs; [
             sops
           ];
-
-          # enterShell = ''
-          #   export ANDROID_SDK_ROOT=$HOME/Android/Sdk
-          #   export PATH=$ANDROID_SDK_ROOT/emulator:$ANDROID_SDK_ROOT/platform-tools:$PATH
-          # '';
         };
       };
     };
